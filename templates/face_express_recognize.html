@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatibale" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Project | Face Expression Recognizer</title>
+
+    <!-- CSS files -->
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color-1.css') }}" >
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> --
+    
+      
+</head>
+
+<body>
+
+    <div id="header projects">
+        
+        <!-- main-container start -->
+        <div class="container">
+
+        <nav>
+
+            <a href="{{ url_for('home') }}#home"><img src="{{ url_for('static', filename='images/logo-new.png') }}" class="logo"></a>
+            <ul id="sidemenu">
+                <li><a href="{{ url_for('home') }}#home">Home</a></li>
+                <li><a href="{{ url_for('home') }}#about"></i>About</a></li>
+                <li><a href="{{ url_for('home') }}#services"></i>Services</a></li>
+                <li><a href="{{ url_for('portfolio') }}"></i>Portfolio</a></li>
+                <li><a href="{{ url_for('home') }}#contact"></i>Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+</div>
+
+
+<!-- --------- Portfolio ---------  -->
+
+<div id="portfolio">
+
+    <div class="container">
+        <h1 class="sub-title">Real-time Face Expression Detection</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+              <div class="buttons">
+                  <button id="startButton" class="btn btn-primary btn-lg">Start Camera</button>
+                  <button id="stop" class="btn btn-secondary btn-lg">Stop Camera</button>
+                </div>
+              <div class="camera">
+                <video id="video" width="100%" height="100%" autoplay playsinline></video>
+                <canvas id="canvas" width="100%" height="100%"></canvas>
+              <div id="prediction" class="prediction"></div>
+              </div>
+              
+            </div>
+            <div class="col-md-6">
+              <div class="project-info">
+                <img src="{{ url_for('static', filename='images/img-object-detect.jpeg') }}">
+                <p>The Real-time Face Expression App is a computer vision application that detects facial expressions in real-time using deep learning algorithms. It involves identifying the presence of facial expressions and their associated emotions within a video frame captured from the camera.</p>
+                <p>This project uses TensorFlow and Keras to train a deep learning model on a large dataset of images with labeled facial expressions. The model is then deployed using Flask to create a web application that can detect facial expressions in real-time.</p>
+              </div>
+            </div>
+        </div>
+          
+    </div>
+</div>
+
+<div class="container">
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>Other Projects</h2>
+                <a href="#portfolio"><p>View More</p></a>
+            </div>
+        </div>
+        
+        <div class="work-list">
+            <div class="work">
+                <img src="{{ url_for('static', filename='images/img-xray-01.jpeg') }}" >
+                <div class="layer">
+                    <h3>Detecting Pneumonia from Chest X-rays</h3>
+                    <p>Detecting Pneumonia from Chest X-rays using deep learning is a technique that allows computers
+                        to automatically identify signs of pneumonia in medical images.
+                        It is a critical tool that can help doctors to make faster and more accurate diagnoses, leading to better patient outcomes.</p>
+                        <a href="{{ url_for('detecting_pneumonia') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{{ url_for('static', filename='images/my-works-05.jpg') }}" >
+                <div class="layer">
+                    <h3>Stock Price Prediction</h3>
+                    <p>Stock price prediction is the use of machine learning algorithms to analyze historical stock data and make predictions about future stock price movements.
+                        A machine learning model is trained on a dataset of historical stock data and tested to evaluate its accuracy.
+                        Once trained, the model can be used to make predictions about future stock prices to help investors make informed decisions.</p>
+                        <a href="{{ url_for('stock_prediction') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{{ url_for('static', filename='images/img-detect.jpeg') }}" >
+                <div class="layer">
+                    <h3>Object detection</h3>
+                    <p>Object detection is a powerful tool with a wide range of applications.
+                        The process involves training a machine learning algorithm on a dataset of
+                        labeled images, and then using the algorithm to identify objects within new,
+                        unlabeled images or videos. </p>
+                        <a href="{{ url_for('image_detect') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ------- footer -------  -->
+
+<div class="copyright">
+    <hr>
+        <ul>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/wajidmohamed.wajid?mibextid=LQQJ4d"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/invites/contact/?i=14a6021l32mkc&utm_content=3issvjw"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/abdul-wajid-28678519a"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </ul>
+    <p>"Copyright © Wajith 2022. All rights reserved."</p>
+</div>
+
+   
+    <!--JS files-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+       
+</body>
+
+</html>
