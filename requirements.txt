@@ -143,8 +143,8 @@ tensorboard-plugin-wit
 tensorflow==2.11.0
 tensorflow-estimator
 tensorflow-intel
-tensorflow-io-gcs-filesystem
-tensorflow-object-detection-api
+tensorflow-io-gcs-filesystem==0.6.1
+tensorflow-object-detection-api==1.8.1
 termcolor==2.2.0
 terminado==0.17.1
 threadpoolctl==3.1.0
