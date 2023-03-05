@@ -4,16 +4,12 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from config import Config
 from projects.object_detection import obj_detect_model
-from projects.face_expression import expression_model
 from hub import allow_file
 import tensorflow as tf
 from PIL import Image
 import numpy as np
 from projects.object_detection.models.utils import visualization_utils
-# import cv2
-# import dlib
-import base64
-import json
+
 
 app = Flask(__name__)
 
@@ -117,74 +113,7 @@ def stock_prediction():
 def face_recognize():
     return render_template('face_express_recognize.html')
 
-#CORS(app)
-#
-#detector = dlib.get_frontal_face_detector()
-#model = expression_model.get_model()
-#model.load_weights(Config.EXPRESSION_MODEL)
-#Le = expression_model.load_object(Config.EXPRESSION_MODEL_LE)
-#
-#@app.route('/expression_prediction', methods=['POST'])
-#def predict():
-#    # Decode video data sent from UI
-#    video_data = request.get_json()['video']
-#    video_data = video_data.split(',')[1]
-#    video_data = base64.b64decode(video_data)
-#    video_data = np.frombuffer(video_data, np.uint8)
-#    video = cv2.imdecode(video_data, cv2.IMREAD_COLOR)
-#
-#    # Set up the video capture
-#    VideoCapture = cv2.VideoCapture(video)
-#
-#    def generate():
-#        while True:
-#            # Capture frame from video
-#            ret, frame = VideoCapture.read()
-#
-#            if not ret:
-#                yield jsonify({"error": "Failed to read frame from video."}), 500
-#
-#            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-#
-#            rects = detector(gray, 0)
-#
-#            if len(rects) >= 1:
-#                for rect in rects:
-#                    (x, y, w, h) = expression_model.rect_to_bb(rect)
-#                    img = gray[y - 10: y + h + 10, x - 10: x + w + 10]
-#
-#                    if img.shape[0] == 0 or img.shape[1] == 0:
-#                        yield jsonify({"error": "Failed to extract face from frame."}), 500
-#
-#                    else:
-#                        img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
-#                        img = expression_model.ProcessImage(img)
-#                        out = expression_model.RealtimePrediction(img, model, Le)
-#                        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-#                        z = y - 15 if y - 15 > 15 else y + 15
-#                        cv2.putText(frame, str(out), (x, z), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2)
-#
-#                retval, buffer = cv2.imencode('.jpg', frame)
-#                frame_bytes = buffer.tobytes()
-#
-#                # Send frame and prediction back to UI
-#                response = {'result': str(out)}
-#                data = {'image': base64.b64encode(frame_bytes).decode('utf-8'), 'prediction': json.dumps(response)}
-#                yield f"data: {json.dumps(data)}\n\n"
-#
-#            else:
-#                retval, buffer = cv2.imencode('.jpg', frame)
-#                frame_bytes = buffer.tobytes()
-#
-#                # Send frame and message back to UI
-#                response = {'result': 'No faces detected.'}
-#                data = {'image': base64.b64encode(frame_bytes).decode('utf-8'), 'prediction': json.dumps(response)}
-#                yield f"data: {json.dumps(data)}\n\n"
-#
-#    return Response(generate(), mimetype='text/event-stream')
-#
-#
-#
+
 # emotion analysis
 @app.route('/emotion_analysis')
 def emotion_analysis():

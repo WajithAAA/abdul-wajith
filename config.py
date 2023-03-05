@@ -14,7 +14,5 @@ class Config:
 
     ALLOWED_EXTENSIONS = set(['png','jpg','jpeg'])
 
-    #EXPRESSION_MODEL = os.path.join(PROJECTS, 'face_expression/best_weights.h5')
-    EXPRESSION_MODEL_LE = os.path.join(PROJECTS, 'face_expression/LabelEncoder.pck')
 
 

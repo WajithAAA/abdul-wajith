@@ -169,6 +169,12 @@ nav ul li a:hover::after{
     color: #fff;
 }
 
+.sub-title-2{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
 .tab-title{
     display: flex;
     margin: 20px 0 40px;
@@ -505,6 +511,7 @@ nav .fa-solid{
     text-align: justify;
     width: 50%;
     padding: 0 15px;
+    margin-top: 30px;
   }
   
   .col-lg-8 img {
@@ -514,13 +521,29 @@ nav .fa-solid{
     margin: auto;
     margin-bottom: 20px;
   }
-
+  
   .col-md-6 p {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.8    ;
     text-align: justify;
     margin-bottom: 50px;
   }
+  
+  .btn.btn-primary.btn-lg, .btn.btn-success.btn-lg {
+    display: block;
+    background: #1d566e;
+    width: 350px;
+    margin: auto;
+    margin-top: 40px;
+    margin-left: 60px;
+  }
+
+
+  .btn.btn-primary.btn-lg:hover, .btn.btn-success.btn-lg:hover {
+    background: #21aba5;
+    transform: translateZ(20%);
+  }
+  
 
   
   .camera {
@@ -539,30 +562,12 @@ nav .fa-solid{
   }
   
   .buttons {
-    display: flex;
+    display: flex;  
     justify-content: space-between;
     margin-top: 10px;
+    
   }
-  
-  .btn.btn-primary.btn-lg{
-    display: inline-block;
-    background: #1d566e;
-}
 
-.btn.btn-secondary.btn-lg{
-    display: inline-block;
-    background: #1d566e;
-}
-
-.btn.btn-primary.btn-lg:hover{
-    background: #21aba5;
-    transform: translateZ(20%);
-}
-
-.btn.btn-secondary.btn-lg:hover{
-    background: #21aba5;
-    transform: translateZ(20%);
-}
 
   .snapshot {
     position: relative;
@@ -614,23 +619,61 @@ nav .fa-solid{
   
 @media only screen and (max-width: 600px){
 
-    .img-box{
-        display: none;
+    .sub-title{
+        font-size: 40px;
+        font-weight: 600;
+        color: #fff;
     }
 
-    #header{
-        background-image: url(/images/home-new.png);
-        background-position: 40px;
+    .sub-title-2{
+        font-size: 40px;
+        font-weight: 500;
+        color: #fff;
     }
-    .header-text{
-        margin-top: 100%;
-        font-size: 16px;
+
+    .img-box{
+        background-image: url(/static/images/home-new.png);
+        background-size: cover;
+        height: 400px; 
+        position: relative;
+        float: right;
+        top: -60px;
+        right: 0px;
+        width: 60%;
+      } 
+
+    .img-box .back-img, .img-box .main-img{
+        display: none;
+      }
+
+     .header-text {
+    position: absolute;
+    bottom: 160px; 
+    left: 0; 
+    width: 100%;
+    padding: 20px;  
+    font-size: 16px;
     }
+
+    .about-col-1 img {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: -180px; /* adjust the margin-top value to move the image up */
+      }
+
     .header-text h1{
         font-size: 30px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: -200px;
+        align-items: left;
+        display: flex;
+        flex-direction: column;
     }
+
     .header-text p{
         color: #21aba5;
+        margin-top: 400px;
     }
 
     .header-text p span{
@@ -671,9 +714,6 @@ nav .fa-solid{
         cursor: pointer;
     }
 
-    .sub-title{
-        font-size: 40px;
-    }
 
     .about-col-1, .about-col-2{
         flex-basis: 100%;
@@ -700,23 +740,32 @@ nav .fa-solid{
         font-size: 14px;
     }
     
-    .col-md-6 {
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        position: center;
 
-      }
-      
-      .col-md-6 p {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 30px;
+      .col-md-6 {
+        width: 200%;
+        padding: 0;
       }
     
       .col-lg-8 img {
-        width: 100%;
+        width: 220%;
         height: auto;
         margin-bottom: 20px;
+      }
+    
+      .col-md-6 p {
+        width: 220%;    
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+    
+      .btn.btn-primary.btn-lg, .btn.btn-success.btn-lg {
+        display: block;
+        background: #1d566e;
+        width: 100%;
+        margin-bottom: px;
+        margin-top: 40px;
+        margin-left: 30px;
       }
 }

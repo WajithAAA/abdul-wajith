@@ -36,7 +36,8 @@
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
-
+    </div>
+</div>
 
 <!-- --------- Portfolio ---------  -->
 
@@ -44,37 +45,46 @@
     <div class="container">
         <h1 class="sub-title">Emotion Analysis</h1>
 
-        <div class="row">
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form action="upload" method="post" enctype="multipart/form-data">
-              <div class="form-row">
-                <div class="col-12 col-md-6 mb-2 mb-md-0">
-                  <input class="btn btn-primary btn-lg" type="file" name="file" id="inputFile1">
+
+    <div class="row">
+            <div class="col-md-6">
+              <form action="upload" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                  <div class="col-12 mb-2 mb-md-0 d-flex justify-content-center">
+                    <input class="btn btn-primary btn-lg" type="file" name="file" id="inputFile1">
+                  </div> 
+                  <div class="col-12 mt-3 d-flex justify-content-center">
+                    <input class="btn btn-success btn-lg" type="submit" value="Upload Image">
+                  </div>
                 </div>
-                <div class="col-12 col-md-6">
-                  <input class="btn btn-success btn-lg" type="submit" value="Upload">
-                </div>
+              </form>
+              <br>
+              <div class="col-lg-8 d-flex justify-content-center">
+                <img id="imagen"><br/>
               </div>
-            </form>
-            <br>
-            <h3 class="bg-warning"><STRONG>{{image_caption}}</STRONG></h3>
-            <div class="col-lg-8">
-              <img id="imagen"><br/>
+            </div>
+            <div class="col-md-6">
+            <p>Emotion analysis, also known as sentiment analysis, is a natural language processing technique for identifying and extracting emotions and opinions from text data. It involves analyzing text to identify the sentiment, tone, and emotional content of a message.</p>
+            <div class="col-lg-8 d-flex justify-content-center">
+                <img src="{{ url_for('static', filename='images/img-emotion-03.jpg') }}">
+              </div>
+            <p>This project uses machine learning algorithms to analyze text data and identify the emotions expressed within the text. The algorithm is trained on a large dataset of text data with labeled emotions, such as positive, negative, or neutral. The algorithm analyzes this data to identify patterns and features that are indicative of different emotions.</p>
+            <p>The accuracy of the algorithm depends on the quality and relevance of the training data, as well as the performance of the machine learning model. Therefore, it is important to use high-quality, labeled data and to continually optimize and update the model to improve its performance.</p>
+            <p>Emotion analysis has numerous applications, including social media monitoring, customer feedback analysis, and market research. It can help companies gain insights into customer preferences and opinions, identify areas for improvement, and develop targeted marketing campaigns. However, it is important to note that the algorithm is a tool to assist in decision making and should not be used as a substitute for careful evaluation and judgment.</p>
             </div>
           </div>
+
+        </div>
         </div>
 
         
-        <div class="small-container">
-            <div class="row row-2">
-                <h2>Other Projects</h2>
-                <a href="#portfolio"><p>View More</p></a>
-            </div>
-        </div>
+<div id="portfolio">
+    <div class="container">     
+        <h2 class="sub-title-1">Other Projects</h2>      
         
         <div class="work-list">
             <div class="work">
-                <img src="{{ url_for('static', filename='images/img-detect.jpg') }}" >
+                <img src="{{ url_for('static', filename='images/img-detect.jpeg') }}" >
                 <div class="layer">
                     <h3>Object detection</h3>
                     <p>Object detection is a powerful tool with a wide range of applications.
@@ -85,7 +95,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="{{ url_for('static', filename='images/img-face-prediction-01.jpg') }}" >
+                <img src="{{ url_for('static', filename='images/img-face-prediction-01.jpeg') }}" >
                 <div class="layer">
                     <h3>Face Expression Recognizer</h3>
                     <p>Face Expression Recognition using deep learning is a technique that allows computers
@@ -109,7 +119,6 @@
     </div>
 </div>
 
-</div>
 
 
 <!-- ------- footer -------  -->

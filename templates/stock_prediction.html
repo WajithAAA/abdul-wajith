@@ -45,23 +45,38 @@
 <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">Stock Price Prediction</h1>
+        
         <div class="row">
+            
             <div class="col-md-6">
-              <h2 class="sub-title-2" >Pending</h2>
-              <br>
-              <div class="col-lg-8">
-                <img id="imagen"><br/>
-              </div>
-            </div>
-            <div class="col-md-6">
-                <div class="col-lg-8">
-                    <img src="{{ url_for('static', filename='images/img-object-detect.jpeg') }}">
-                  </div>
-              <p>Object detection is a computer vision technique for detecting objects in images or videos. It involves identifying the presence of an object and its location within an image or video frame.</p>
-              <p>This project uses deep learning algorithms to detect objects in images. The algorithm is trained on a large dataset of images with labeled objects and can identify a wide range of objects with high accuracy.</p>
 
+                <p>Stock price prediction is a machine learning technique for predicting the future value of a stock. It involves analyzing historical data to identify patterns and trends that can be used to make predictions about future stock prices.</p>
+                <div class="col-lg-8 d-flex justify-content-center">
+                    <img src="{{ url_for('static', filename='images/img-stock-prediction.jpg') }}">
+                  </div>
+                <p>This project uses machine learning algorithms to predict stock prices. The algorithm is trained on a large dataset of historical stock prices and other relevant data, such as economic indicators, company performance, and news events. The algorithm analyzes this data to identify patterns and trends and uses this information to make predictions about future stock prices.</p>
+                <p>The accuracy of the predictions can be affected by various factors, such as the quality and relevance of the data used for training, the volatility of the stock market, and unforeseen events that can impact stock prices. Therefore, it is important to continually monitor and update the algorithm to ensure that it continues to make accurate predictions.</p>
+                
             </div>
+
+            <div class="col-md-6">
+                <form action="upload" method="post" enctype="multipart/form-data">
+                  <div class="form-row">
+                    <div class="col-12 mb-2 mb-md-0 d-flex justify-content-center">
+                      <input class="btn btn-primary btn-lg" type="file" name="file" id="inputFile1">
+                    </div> 
+                    <div class="col-12 mt-3 d-flex justify-content-center">
+                      <input class="btn btn-success btn-lg" type="submit" value="Upload Image">
+                    </div>
+                  </div>
+                </form>
+                <br>
+                <div class="col-lg-8 d-flex justify-content-center">
+                  <img id="imagen"><br/>
+                </div>
+              </div>
           </div>
+
         </div>
     </div>
 
@@ -72,7 +87,6 @@
     <!-- <div class="small-container">
         <div class="row row-2"> -->
         <h2 class="sub-title-1" >Other Projects</h2>
-        <!-- <a href="#portfolio"><p>View More</p></a> -->
         <!-- </div>
     </div> -->
     

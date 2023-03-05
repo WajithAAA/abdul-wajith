@@ -26,7 +26,13 @@ function closemenu(){
     sidemenu.style.right = '-200px';
 }
 
-
+var menuItems = sidemenu.querySelectorAll('a');
+for (var i = 0; i < menuItems.length; i++) {
+  menuItems[i].addEventListener('click', function() {
+    // Close the side menu
+    closemenu();
+  });
+}
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwefRrxf87BQEqFo7lUjkd4mvpDVwYk7aZ4KOvCKNYNpWje69m-lnh2AACcDXdpNUn0jQ/exec'
 const form = document.forms['submit-to-google-sheet']
