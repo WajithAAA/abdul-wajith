@@ -606,14 +606,6 @@ nav .fa-solid{
 
 /* emotional project */
 
-.col-emotion {
-    flex-basis: calc(50% - 1rem);
-    margin-bottom: 1rem;
-    text-align: justify;
-    width: 100%;
-    padding: 0 15px;
-    margin-top: 30px;
-  }
 
   
   .result {
@@ -720,17 +712,13 @@ nav .fa-solid{
         width: 100%; */
     }
 
-    .header-text .btn.btn2{
-        display: none;
-    }
-
     .header-text p span{
         color: #fff;
     }
 
-    .header-text a{
-        display: none;
-    }
+    /* .header-text a{
+        margin-left: 15px;
+    } */
 
     nav .fa-solid{
         display: block;
@@ -773,6 +761,7 @@ nav .fa-solid{
 
     .about-col-2{
         font-size: 14px;
+        margin-top: -200px;
     }
     .about-col-2 h1{
         display: none;
@@ -791,16 +780,12 @@ nav .fa-solid{
         font-size: 14px;
     }
     
-
-      .col-md-6 {
-        width: 200%;
-        padding: 0;
-      }
     
       .col-lg-8 img {
-        width: 200%;
+        width: 220%;
         height: auto;
         margin-bottom: 20px;
+        margin-left: 10px;
       }
     
       .col-md-6 p {
@@ -809,29 +794,37 @@ nav .fa-solid{
         line-height: 1.5;
         margin-bottom: 10px;
         margin-top: 20px;
+        margin-left: 10px;
       }
     
       .btn.btn-primary.btn-lg, .btn.btn-success.btn-lg {
         display: block;
         background: #1d566e;
         width: 100%;
-        margin-bottom: px;
+        margin-bottom: 10px;
         margin-top: 40px;
         margin-left: 30px;
       }
 
-      .col-emotion{
+      .col-md-6.emotion{
         display: block;
         width: 200%;
         margin-bottom: 10px;
         margin-top: 40px;
+        margin: 40px 0;
+        
       }
-
-      .form-group{
-        width: 200%;
-        align-items: center;
-    } 
     
+      
+      .form-control {
+        width: 200%;
+      }
+      
+      .btn.btn-primary,
+      .btn.btn-secondary {
+        width: 100%;
+        margin-left: 50%;
+      }
 
 
 }

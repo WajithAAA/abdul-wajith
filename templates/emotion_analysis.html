@@ -45,22 +45,28 @@
     <div class="container">
       <h1 class="sub-title-2">Emotion Analysis</h1>
       <div class="row">
-        <div class="col-emotion">
-          <form id="inputForm">
-            <div class="form-group">
-              <textarea class="form-control" id="inputData" name="inputData" placeholder="Write Your feelings" rows="5"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
-          </form>
-          <div class="result d-none" id="result">
-            <h2 class="sub-title-3">Result:</h2>
-                    <p class="advice"></p>
-                    <div class="emojis"></div>
-          </div>
-          <button type="button" class="btn btn-secondary d-none" id="clearButton">Clear</button>
-        </div>
 
-            <div class="col-md-6">
+      <div class="col-md-6 emotion">
+          <form id="inputForm">
+            <div class="form-row">
+              <div class="col-12 mb-2 mb-md-0">
+                <textarea class="form-control" id="inputData" name="inputData" placeholder="Write Your feelings" rows="5"></textarea>
+              </div> 
+              <div class="col-12 mt-3">
+                <div class="d-flex justify-content-center">
+                  <input class="btn btn-primary mr-2" type="submit" id="submitButton" value="Submit ">
+                  <input type="button" class="btn btn-secondary" id="clearButton" value="Clear result">
+                </div>
+                <div class="result d-none" id="result">
+                  <p class="advice"></p>
+                  <div class="emojis"></div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <br>
+            <div class="col-md-6 emotion">
             <p>Emotion analysis, also known as sentiment analysis, is a natural language processing technique for identifying and extracting emotions and opinions from text data. It involves analyzing text to identify the sentiment, tone, and emotional content of a message.</p>
             <div class="col-lg-8 emotion d-flex justify-content-center">
                 <img src="{{ url_for('static', filename='images/img-emotion-03.jpg') }}">
