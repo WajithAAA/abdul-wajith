@@ -619,6 +619,11 @@ nav .fa-solid{
     margin-bottom: 50px;
   }
   
+  .result.d-none {
+    font-size: 18px;
+    line-height: 1.8    ;
+    text-align: justify;
+  }
 
   .btn.btn-primary, .btn.btn-secondary{
     display: flex;
@@ -691,11 +696,12 @@ nav .fa-solid{
     }
 
     .about-col-1 img {
-        width: 100%;
+        display: none;
+        /* width: 100%;
         border-radius: 15px;
         margin-bottom: 10px;
         margin-top: 100px;
-        align-items: center;
+        align-items: center; */
       }
 
     .header-text h1{
@@ -710,11 +716,11 @@ nav .fa-solid{
 
     .header-text p{
         /* font-size: 14px; */
-        /* display: none; */
-        color: #21aba5;
+        display: none;
+        /* color: #21aba5;
         margin-top: 80px;
         align-items: center;
-        width: 100%;
+        width: 100%; */
     }
 
     .header-text .btn.btn2{
@@ -770,6 +776,9 @@ nav .fa-solid{
 
     .about-col-2{
         font-size: 14px;
+    }
+    .about-col-2 h1{
+        display: none;
     }
 
     .tab-links{
