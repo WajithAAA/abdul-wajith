@@ -52,6 +52,13 @@
         <h2 class="pending">Status : Yet to Deployed</h2>
         <div class="row">
             <div class="col-md-6">
+                <div class="col-lg-8 d-flex justify-content-center">
+                    <img src="{{ url_for('static', filename='images/face-expression.jpg') }}">
+                  </div>
+                <p>The Real-time Face Expression App is a computer vision application that detects facial expressions in real-time using deep learning algorithms. It involves identifying the presence of facial expressions and their associated emotions within a video frame captured from the camera.</p>
+                <p>This project uses TensorFlow and Keras to train a deep learning model on a large dataset of images with labeled facial expressions. The model is then deployed using Flask to create a web application that can detect facial expressions in real-time.</p>
+              </div>
+            <div class="col-md-6">
 
                 <form action="upload" method="post" enctype="multipart/form-data">
                   <div class="form-row">
@@ -69,13 +76,7 @@
                 </div>
               </div>
 
-            <div class="col-md-6">
-                <div class="col-lg-8 d-flex justify-content-center">
-                    <img src="{{ url_for('static', filename='images/face-expression.jpg') }}">
-                  </div>
-                <p>The Real-time Face Expression App is a computer vision application that detects facial expressions in real-time using deep learning algorithms. It involves identifying the presence of facial expressions and their associated emotions within a video frame captured from the camera.</p>
-                <p>This project uses TensorFlow and Keras to train a deep learning model on a large dataset of images with labeled facial expressions. The model is then deployed using Flask to create a web application that can detect facial expressions in real-time.</p>
-              </div>
+           
             </div>
         </div>
           

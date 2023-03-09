@@ -46,7 +46,17 @@
         <h1 class="sub-title">Car Price Prediction</h1>
         <h2 class="pending">Status : Model building on going</h2>
         <div class="row">
-           
+            <div class="col-md-6">
+              
+                <p>Car price prediction is a machine learning technique for predicting the future value of a car. It involves analyzing historical data to identify patterns and trends that can be used to make predictions about future car prices.</p>
+                <div class="col-lg-8 d-flex justify-content-center">
+                   <img src="{{ url_for('static', filename='images/car-price-pred.jpg') }}">
+                 </div>
+                <p>This project uses machine learning algorithms to predict car prices. The algorithm is trained on a large dataset of historical car prices and other relevant data, such as car specifications, age, mileage, and location. The algorithm analyzes this data to identify patterns and trends and uses this information to make predictions about future car prices.</p>
+                <p>The accuracy of the predictions can be affected by various factors, such as the quality and relevance of the data used for training, the condition of the car, and changes in the automotive market. Therefore, it is important to continually monitor and update the algorithm to ensure that it continues to make accurate predictions.</p>
+                <p>Car price prediction has numerous applications, including helping buyers make informed purchasing decisions, assisting dealerships in setting prices, and enabling insurance companies to calculate premiums. However, it is important to note that the algorithm is a tool to assist in decision making and should not be used as a substitute for careful evaluation and judgment.</p>
+               </div>
+               
             <div class="col-md-6">
                 <form action="upload" method="post" enctype="multipart/form-data">
                   <div class="form-row">
@@ -63,16 +73,7 @@
                   <img id="imagen"><br/>
                 </div>
               </div>
-              <div class="col-md-6">
-              
-                <p>Car price prediction is a machine learning technique for predicting the future value of a car. It involves analyzing historical data to identify patterns and trends that can be used to make predictions about future car prices.</p>
-                <div class="col-lg-8 d-flex justify-content-center">
-                   <img src="{{ url_for('static', filename='images/car-price-pred.jpg') }}">
-                 </div>
-                <p>This project uses machine learning algorithms to predict car prices. The algorithm is trained on a large dataset of historical car prices and other relevant data, such as car specifications, age, mileage, and location. The algorithm analyzes this data to identify patterns and trends and uses this information to make predictions about future car prices.</p>
-                <p>The accuracy of the predictions can be affected by various factors, such as the quality and relevance of the data used for training, the condition of the car, and changes in the automotive market. Therefore, it is important to continually monitor and update the algorithm to ensure that it continues to make accurate predictions.</p>
-                <p>Car price prediction has numerous applications, including helping buyers make informed purchasing decisions, assisting dealerships in setting prices, and enabling insurance companies to calculate premiums. However, it is important to note that the algorithm is a tool to assist in decision making and should not be used as a substitute for careful evaluation and judgment.</p>
-               </div>
+             
           </div>
 
         </div>
