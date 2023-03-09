@@ -1,0 +1,209 @@
+
+linux commands - ssh dev@10.3.3.127
+
+_______________
+
+1. change folders : cd <folder name>
+2. go back : cd ..
+3. view folders : ls
+
+4. open file in editor : sudo vi <file_name>
+	edit file : i
+	save and exit: esc+ :wq!
+      exit : esc : :q!
+
+5. python
+	create venv : sudo python3 -m venv venv
+	activate venv: source venv/bin/activate
+	pip install : pip3 install -r requirements.txt
+	run script: python3 <script name>
+
+6. give permission to folders: 
+		sudo chown -R $USER <folder path>
+
+7. get current folder path : pwd
+
+8. git commands:
+		git stash
+		git pull origin qa
+
+9. pm2 commands :
+		run new process: sudo env PATH=$PATH pm2 start run.py --name <process name> --interpreter python3 --interpreter-args -u
+		view all : pm2 ls
+		check logs : pm2 logs <process id>
+		pm2 restart <process id>
+		pm2 stop <process id>
+
+
+Mongo DB
+
+database
+mongo
+show dbs
+use <db_name>
+show collections
+db.<collection_name>.find().limit(1)
+
+
+TO get db backup:
+sudo mongodump --db MasterIndexCVG_PROD
+
+To drop a collection:
+db.master_index_montecito.drop()
+
+Upload  file - (open new git pash)
+ scp -r E:/Projects/montecito-address-mapper/ftp/in/  dev@10.3.3.127:montecito-address-mapper/montecito-address-mapper-qa/ftp/in
+
+Download from server
+	scp -r   dev@10.3.3.127:transaction.json C:\Users\WAJITH\Downloads
+
+Download one file
+sudo mongoexport -d MasterIndexCVG_PROD -c master_index_transaction -o transaction.json
+
+Restart mongo connection 
+sudo service mongodb start
+
+
+
+commands:
+inside the server : 
+sudo mongoexport --db MasterIndexCVG_PROD --collection master_index_transaction --out transaction.json
+
+without login to the server, in a new terminal:
+ scp -r   dev@10.3.3.127:transaction.json C:/Users/WAJITH/Downloads
+
+
+	- Push the all code into tfs
+	- Get them to server 
+		1. login to the server
+		2. go to montecito qa folder
+		       cd  /montecito-address-mapper/montecito-address-mapper-qa
+		git stash - ignore
+		3. git pull origin master
+		ctrl + x
+		4. check the run.py file port and environment
+		   a. open run.py file  --> sudo vi run.py
+		   b. edit command ---> i
+		   c. save and exit --> esc+ :wq!
+		
+	- If conflict there
+		○ Remove the file  -  sudo rm <file_path>
+		○ Add new file  - sudo vi run.py
+		○ To paste using above section 4
+		
+	- git add .
+	- git commit -m "aggresive model update"
+	- If new to update the db
+		○ Upload the file into server - scp -r E:/Projects/montecito-address-mapper/ftp/in/  dev@10.3.3.127:montecito-address-mapper/montecito-address-mapper-qa/ftp/in
+		○ Take backup sudo mongodump --db MasterIndexCVG_PROD
+		○ Drop the db - db.master_index_montecito.drop()
+	
+	- pm2 restart 9
+	- pm2 logs 9
+
+
+NEW PROJECT DEPLOYMENT
+	- Clone the project - git clone <path>
+	- Go to project file
+	- Create new env - python3 -m venv venv
+	- Activate env -  source venv/bin/activate
+	- Give permission to fenv file - sudo chown -R $USER ~/montecito-address-mapper/montecito-address-mapper-v2/venv
+	- Install requirements - pip3 install -r requirements.txt
+	- Run the file - python3 run.py
+
+
+Git 
+
+commit a file to tfs
+git clone https://tfs.champsoft.com/tfs/DefaultCollection/_git/ddi-psy-risk
+git status
+git add .
+git commit -m "aggresive model update"
+git push origin master
+
+git switch qa
+Git init - create new dir
+git diff - view the branch defference
+Git reset - undo
+Git merge - moving one branch to another branch
+Git pull - get from remote to local
+Git log --merge - check the list of commit cuasing conflict
+Git checkout
+Git reset --mixed - undo the changes in working directory and staging area
+Git merge --abort - exits and coming to starting area
+Ls -lart
+Git mergetool
+
+
+git lfs install
+
+git lfs track "*.h5"
+
+git add .gitattributes
+
+git add bert_model_for_aggression_violence.h5
+
+git commit -m "model update"
+
+git push origin master
+
+List - ls
+Clear - clear
+Change dir - cd
+Exit - exit
+
+Make dir - mkdir
+Remove dir - rmdir
+
+Create file - touch 'file name'
+Remove file - rm 'file name'
+
+Open - nano 'file name'
+
+
+
+1. login to the server
+2. go to montecito qa folder
+       cd  /montecito-address-mapper/montecito-address-mapper-qa
+git stash - ignore
+3. git pull origin master
+ctrl + x
+4. check the run.py file port and environment
+   a. open run.py file  --> sudo vi run.py
+   b. edit command ---> i
+   c. save and exit --> esc+ :wq!
+
+Important after changes in server
+5. pm2 restart 9
+6. pm2 logs 9
+
+Delete
+sudo rm <file_path>
+
+Port
+ qa - 3345 testing
+dev -3347 development
+uat -3348 UAT
+ prod 3344 production
+
+ID 
+Prod - 12
+Qa - 9
+Dev - 11
+Uat - 
+
+
+Ceate app
+	- npx create-react-app
+	
+clone from github
+
+Start app
+	- Npm init -y
+
+Start the app 
+	- Yarn start
+
+Install library
+	- Yarn add express mongoose
+	- yarn add express mongoose dotenv nodemon

@@ -627,9 +627,17 @@ nav .fa-solid{
 }
 
 
+.pending{
+    margin-top: 30px;
+    margin-left: 20px;
+    color: rgb(225, 255, 0);
+}
 
 
-
+.header-text a p{
+    font-size: 12px;
+    color: yellow;
+}
 
 
 
@@ -716,9 +724,11 @@ nav .fa-solid{
         color: #fff;
     }
 
-    /* .header-text a{
-        margin-left: 15px;
-    } */
+    .header-text a{
+        font-size: 14px;
+        /* margin-left: 15px; */
+    }
+
 
     nav .fa-solid{
         display: block;
@@ -761,7 +771,7 @@ nav .fa-solid{
 
     .about-col-2{
         font-size: 14px;
-        margin-top: -200px;
+        margin-top: -230px;
     }
     .about-col-2 h1{
         display: none;
